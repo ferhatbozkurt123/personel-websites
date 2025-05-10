@@ -112,7 +112,7 @@ Proje yönetimi ve çözüm odaklı ekip çalışmasında aktif rol aldım.     
                 </ul>
               </div>
             </div>
-          </div>
+        </div>
 
           {/* Skills Grid Container */}
           <div className="space-y-6">
@@ -148,7 +148,7 @@ Proje yönetimi ve çözüm odaklı ekip çalışmasında aktif rol aldım.     
                 <SkillCard icon={<FaNodeJs className="w-8 h-8" />} name="Node.js" color="text-green-500" />
                 <SkillCard icon={<FaPython className="w-8 h-8" />} name="Python" color="text-yellow-400" />
               </div>
-            </div>
+          </div>
 
             {/* AI & Machine Learning */}
             <div className="glass-card gradient-border rounded-2xl p-6">
