@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithub, FaLinkedin, FaCode, FaBrain, FaServer, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaCode, FaBrain, FaServer } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -139,7 +139,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-green-400">Backend</h3>
                 </div>
                 <p className="text-gray-300">
-                  .NET Core ve Node.js ile güvenli ve ölçeklenebilir API'lar tasarlıyorum.
+                  .NET Core ve Node.js ile güvenli ve ölçeklenebilir API&apos;lar tasarlıyorum.
                 </p>
               </div>
             </Link>

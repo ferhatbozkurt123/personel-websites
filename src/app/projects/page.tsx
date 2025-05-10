@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import ProjectCard from '@/components/ProjectCard';
-import { Project, Category, projects } from './projects-data';
+import { Category, projects } from './projects-data';
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('Hepsi');
