@@ -3,7 +3,7 @@ import "./globals.css";
 import ClientLayout from "./layout";
 import { metadata } from "./metadata";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export { metadata };
 

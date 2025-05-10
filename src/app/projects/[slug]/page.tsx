@@ -1,4 +1,4 @@
-import { Project, projects } from '../projects-data';
+import { projects } from '../projects-data';
 import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
 

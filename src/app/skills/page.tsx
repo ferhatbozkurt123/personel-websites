@@ -1,6 +1,6 @@
 'use client';
 
-import { FaCode, FaServer, FaDatabase, FaBrain, FaBriefcase, FaGraduationCap, FaReact, FaNodeJs, FaPython, FaGithub, FaAngular } from 'react-icons/fa';
+import { FaCode, FaServer, FaDatabase, FaBrain, FaBriefcase, FaReact, FaNodeJs, FaPython, FaAngular } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiTensorflow, SiUnity, SiDotnet, SiSharp, SiMysql, SiFirebase } from 'react-icons/si';
 
 export default function Skills() {
@@ -28,7 +28,7 @@ export default function Skills() {
                 <h3 className="text-xl font-semibold text-gray-200">İŞKUR Genel Merkez - Stajyer</h3>
                 <p className="text-indigo-400 mb-2">2025 (20 iş günü)</p>
                 <p className="text-gray-400">
-                İŞKUR Genel Merkez Bilgi İşlem Dairesi'nde gerçekleştirdiğim staj süresince kurumsal yazılım geliştirme döngülerine aktif olarak dahil oldum.
+                İŞKUR Genel Merkez Bilgi İşlem Dairesi&apos;nde gerçekleştirdiğim staj süresince kurumsal yazılım geliştirme döngülerine aktif olarak dahil oldum.
 Yazılım geliştirme süreçlerinin devlet kurumlarında nasıl yönetildiğini gözlemledim.
 Veri güvenliği, kullanıcı erişim yönetimi ve iş akışı otomasyonu gibi konularda uygulamalı deneyim kazandım.
                 </p>
