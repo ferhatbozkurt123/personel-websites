@@ -7,7 +7,7 @@ import Link from 'next/link';
 /**
  * @param {{ params: { slug: string } }} props
  */
-export default function ProjectDetail({ params }) {
+export default function ProjectDetail({ params }: any) {
   // URL'deki slug'a göre projeyi bul
   const project = projects.find(p => {
     const projectSlug = p.title
