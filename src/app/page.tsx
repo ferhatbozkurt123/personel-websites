@@ -10,9 +10,9 @@ export default function Home() {
       <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-8 relative">
         {/* Profile Card - Left Side */}
         <div className="lg:w-1/4 xl:w-1/5">
-          <div className="glass-card gradient-border rounded-2xl p-6 sticky top-24">
+          <div className="glass-card gradient-border rounded-2xl p-4 sticky top-24">
             {/* Profile Image */}
-            <div className="relative w-40 h-40 mx-auto mb-6 group">
+            <div className="relative w-32 h-32 mx-auto mb-4 group">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 animate-pulse group-hover:animate-none transition-all duration-300"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-blue-600 to-blue-400">
                 <Image
@@ -28,17 +28,17 @@ export default function Home() {
 
             {/* Profile Info */}
             <div className="text-center">
-              <h1 className="text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
+              <h1 className="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
                 Ferhat Bozkurt
               </h1>
-              <h2 className="text-xl text-blue-400 mb-4">
+              <h2 className="text-lg text-blue-400 mb-3">
                 Full Stack Developer
               </h2>
               <p className="text-gray-300 mb-6">
                 Modern web teknolojileri ile kullanıcı dostu ve yenilikçi çözümler geliştiriyorum.
                 React, Next.js ve Node.js ekosisteminde uzmanlaşmış bir yazılım geliştiriciyim.
               </p>
-              <div className="flex flex-col gap-3 mb-8">
+              <div className="flex flex-col gap-2 mb-6">
                 <Link 
                   href="/contact"
                   className="bg-gradient-to-r from-blue-600 to-blue-400 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-1"
@@ -56,7 +56,7 @@ export default function Home() {
               </div>
 
               {/* Social Links */}
-              <div className="pt-6 border-t border-gray-700">
+              <div className="pt-4 border-t border-gray-700">
                 <div className="flex flex-col gap-4">
                   <a 
                     href="mailto:ferhatbozkurt.bm@gmail.com"
@@ -101,9 +101,9 @@ export default function Home() {
         {/* Main Content - Right Side - ENHANCED */}
         <div className="lg:w-3/4 xl:w-4/5 space-y-8">
           {/* Welcome Banner */}
-          <div className="glass-card gradient-border rounded-2xl p-8 relative overflow-hidden group">
+          <div className="glass-card gradient-border rounded-2xl p-5 relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 group-hover:from-blue-600/30 group-hover:to-purple-600/30 transition-all duration-500"></div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 relative">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 relative">
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
                 Merhaba, Ben Ferhat
               </span>
@@ -115,14 +115,14 @@ export default function Home() {
           </div>
 
           {/* Skills Showcase */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link href="/skills" className="block">
-              <div className="glass-card gradient-border rounded-2xl p-6 transform hover:-translate-y-2 transition-all duration-300 h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 flex items-center justify-center">
-                    <FaCode className="w-6 h-6 text-blue-400" />
+              <div className="glass-card gradient-border rounded-2xl p-4 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-lg bg-blue-600/20 flex items-center justify-center">
+                    <FaCode className="w-5 h-5 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-blue-400">Frontend</h3>
+                  <h3 className="text-lg font-semibold text-blue-400">Frontend</h3>
                 </div>
                 <p className="text-gray-300">
                   React, Next.js, Angular ile modern ve responsive web uygulamaları geliştiriyorum.
@@ -131,12 +131,12 @@ export default function Home() {
             </Link>
 
             <Link href="/skills" className="block">
-              <div className="glass-card gradient-border rounded-2xl p-6 transform hover:-translate-y-2 transition-all duration-300 h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-green-600/20 flex items-center justify-center">
-                    <FaServer className="w-6 h-6 text-green-400" />
+              <div className="glass-card gradient-border rounded-2xl p-4 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-lg bg-green-600/20 flex items-center justify-center">
+                    <FaServer className="w-5 h-5 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-green-400">Backend</h3>
+                  <h3 className="text-lg font-semibold text-green-400">Backend</h3>
                 </div>
                 <p className="text-gray-300">
                   .NET Core ve Node.js ile güvenli ve ölçeklenebilir API&apos;lar tasarlıyorum.
@@ -145,12 +145,12 @@ export default function Home() {
             </Link>
 
             <Link href="/skills" className="block">
-              <div className="glass-card gradient-border rounded-2xl p-6 transform hover:-translate-y-2 transition-all duration-300 h-full">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-purple-600/20 flex items-center justify-center">
-                    <FaBrain className="w-6 h-6 text-purple-400" />
+              <div className="glass-card gradient-border rounded-2xl p-4 transform hover:-translate-y-2 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-9 h-9 rounded-lg bg-purple-600/20 flex items-center justify-center">
+                    <FaBrain className="w-5 h-5 text-purple-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-purple-400">AI & ML</h3>
+                  <h3 className="text-lg font-semibold text-purple-400">AI & ML</h3>
                 </div>
                 <p className="text-gray-300">
                   TensorFlow ile yapay zeka modelleri geliştirip, pratik çözümler üretiyorum.
@@ -160,9 +160,9 @@ export default function Home() {
           </div>
 
           {/* Featured Projects */}
-          <div className="glass-card gradient-border rounded-2xl p-8">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold text-blue-400">Öne Çıkan Projeler</h3>
+          <div className="glass-card gradient-border rounded-2xl p-5">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-xl font-bold text-blue-400">Öne Çıkan Projeler</h3>
               <Link 
                 href="/projects" 
                 className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2"
@@ -171,9 +171,9 @@ export default function Home() {
                 <span className="text-xl">→</span>
               </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <Link href="/projects" className="block">
-                <div className="bg-gray-800/50 rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
+                <div className="bg-gray-800/50 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
                   <h4 className="text-xl font-semibold text-gray-200 mb-3">Stok ve Satış Yönetimi</h4>
                   <p className="text-gray-400 mb-4">
                     Kapsamlı işletme yönetim sistemi. Stok takibi, satış yönetimi ve raporlama özellikleri.
@@ -186,7 +186,7 @@ export default function Home() {
               </Link>
 
               <Link href="/projects" className="block">
-                <div className="bg-gray-800/50 rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
+                <div className="bg-gray-800/50 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
                   <h4 className="text-xl font-semibold text-gray-200 mb-3">Enerji Yönetimi AI</h4>
                   <p className="text-gray-400 mb-4">
                     Yapay zeka ile enerji tüketimini optimize eden akıllı sistem. Gerçek zamanlı analiz ve tahminleme.
@@ -199,7 +199,7 @@ export default function Home() {
               </Link>
 
               <Link href="/projects" className="block">
-                <div className="bg-gray-800/50 rounded-xl p-6 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
+                <div className="bg-gray-800/50 rounded-xl p-4 hover:bg-gray-700/50 transition-all duration-300 transform hover:-translate-y-1 h-full">
                   <h4 className="text-xl font-semibold text-gray-200 mb-3">B2B Platform</h4>
                   <p className="text-gray-400 mb-4">
                     İşletmeler arası ticaret platformu. Eşleştirme algoritmaları ve akıllı öneri sistemi.
@@ -214,9 +214,9 @@ export default function Home() {
           </div>
 
           {/* Call to Action */}
-          <div className="glass-card gradient-border rounded-2xl p-8 text-center relative overflow-hidden group">
+          <div className="glass-card gradient-border rounded-2xl p-5 text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 group-hover:from-blue-600/20 group-hover:to-purple-600/20 transition-all duration-500"></div>
-            <h3 className="text-2xl font-bold text-gray-200 mb-4 relative">Birlikte Çalışalım</h3>
+            <h3 className="text-xl font-bold text-gray-200 mb-3 relative">Birlikte Çalışalım</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto relative">
               Projeniz için modern ve etkili çözümler üretmek isterseniz, hemen iletişime geçin.
             </p>
