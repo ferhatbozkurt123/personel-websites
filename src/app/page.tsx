@@ -15,21 +15,30 @@ export default function Home() {
   const featuredProjects = projects.slice(0, 3);
   const [cvMenuOpen, setCvMenuOpen] = useState(false);
   const cvButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Menü dışında tıklanınca kapansın
   useEffect(() => {
-    function handleClick(e: MouseEvent) {
-      if (cvButtonRef.current && !cvButtonRef.current.contains(e.target as Node)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node) &&
+          cvButtonRef.current && !cvButtonRef.current.contains(event.target as Node)) {
         setCvMenuOpen(false);
       }
     }
-    if (cvMenuOpen) {
-      document.addEventListener('mousedown', handleClick);
-    } else {
-      document.removeEventListener('mousedown', handleClick);
-    }
-    return () => document.removeEventListener('mousedown', handleClick);
-  }, [cvMenuOpen]);
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const handleCvClick = (e: React.MouseEvent, lang: 'tr' | 'en') => {
+    e.preventDefault();
+    e.stopPropagation();
+    const url = lang === 'tr' ? '/cv-tr.pdf' : '/cv-en.pdf';
+    window.open(url, '_blank');
+    setCvMenuOpen(false);
+  };
 
   return (
     <main className="min-h-screen p-2 md:p-4">
@@ -66,35 +75,29 @@ export default function Home() {
                 >
                   {t('home.contactCta')}
                 </Link>
-                <div className="relative">
+                <div className="relative" ref={menuRef}>
                   <button
                     ref={cvButtonRef}
                     type="button"
                     className="bg-transparent text-blue-400 px-6 py-3 rounded-full hover:bg-blue-600/10 transition-all duration-300 border border-blue-400 hover:border-blue-600 w-full"
-                    onClick={() => setCvMenuOpen((v) => !v)}
+                    onClick={() => setCvMenuOpen(!cvMenuOpen)}
                   >
                     {t('home.downloadCV')}
                   </button>
                   {cvMenuOpen && (
-                    <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-slate-800 border border-blue-200 dark:border-slate-700 rounded-lg shadow-lg z-50 flex flex-col">
-                      <a
-                        href="/cv-tr.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 hover:bg-blue-100 dark:hover:bg-slate-700 rounded-t-lg text-blue-700 dark:text-blue-300 text-center cursor-pointer"
-                        onClick={() => setCvMenuOpen(false)}
+                    <div className="absolute w-full mt-2 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-blue-200 dark:border-slate-700 z-50">
+                      <button
+                        onClick={(e) => handleCvClick(e, 'tr')}
+                        className="w-full px-4 py-3 text-left text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-slate-700 border-b border-blue-200 dark:border-slate-700"
                       >
                         Türkçe CV
-                      </a>
-                      <a
-                        href="/cv-en.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 hover:bg-blue-100 dark:hover:bg-slate-700 rounded-b-lg text-blue-700 dark:text-blue-300 text-center cursor-pointer"
-                        onClick={() => setCvMenuOpen(false)}
+                      </button>
+                      <button
+                        onClick={(e) => handleCvClick(e, 'en')}
+                        className="w-full px-4 py-3 text-left text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-slate-700"
                       >
                         English CV
-                      </a>
+                      </button>
                     </div>
                   )}
                 </div>
