@@ -47,7 +47,7 @@ export default function About() {
                   <li>{t('about.interest3')}</li>
                   <li>{t('about.interest4')}</li>
                   <li>{t('about.interest5')}</li>
-                </ul>
+            </ul>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-purple-300 mb-3">{t('about.goals')}</h3>
@@ -55,7 +55,7 @@ export default function About() {
                   <li>{t('about.goal1')}</li>
                   <li>{t('about.goal2')}</li>
                   <li>{t('about.goal3')}</li>
-                </ul>
+              </ul>
               </div>
             </div>
           </div>

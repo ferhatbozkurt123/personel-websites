@@ -15,14 +15,6 @@ const nextConfig: NextConfig = {
       },
     ]
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: 'https://ferhatbozkurtbm.com/:path*',
-      },
-    ]
-  },
 };
 
 export default nextConfig;
