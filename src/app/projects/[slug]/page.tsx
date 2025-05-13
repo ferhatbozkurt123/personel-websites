@@ -5,7 +5,7 @@ import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
 import { slugify } from '../../../utils/slugify';
 
-export default async function ProjectDetail(props: any) {
+export default async function ProjectDetail(props: { params: { slug: string } }) {
   const { params } = await props;
   const project = projects.find(p => {
     const projectSlug = slugify(p.title.tr);
