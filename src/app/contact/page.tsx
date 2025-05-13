@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,13 +18,26 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setSubmitStatus('idle');
     try {
-      // Burada form verilerini işleyebilir veya bir API'ye gönderebilirsiniz
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simüle edilmiş API çağrısı
+      // EmailJS ile mail gönderimi
+      const serviceID = 'service_epkkto5';
+      const templateID = 'template_7dzwjmz';
+      const userID = 'MbpiaCyt1SvG6N6U_';
+      
+      const result = await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message
+        },
+        userID
+      );
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch {
+    } catch (error) {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -38,20 +54,20 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="glass-card gradient-border rounded-2xl p-8 mb-8">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text mb-4">
-            İletişime Geç
+            {t('contact.title')}
           </h1>
           <p className="text-gray-300 text-lg">
-          Buradaki iletişim kanalları üzerinden benimle iletişime geçebilirsiniz.
+            {t('contact.info')}
           </p>
         </div>
-
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* İletişim Bilgileri */}
           <div className="glass-card gradient-border rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-blue-400 mb-6">İletişim Bilgileri</h2>
+            <h2 className="text-2xl font-bold text-blue-400 mb-6">{t('navbar.contact')} Bilgileri</h2>
             <div className="space-y-6">
               <a 
-                href="mailto:ferhatbozkurt.bm@gmail.com"
+                href="mailto:ferhatbozkurt.bm@gmail.com" 
                 className="flex items-center space-x-4 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
               >
                 <div className="w-12 h-12 rounded-lg bg-slate-800/50 flex items-center justify-center group-hover:bg-blue-600/20 transition-all duration-300">
@@ -60,7 +76,7 @@ export default function Contact() {
                 <span>ferhatbozkurt.bm@gmail.com</span>
               </a>
               <a 
-                href="https://www.linkedin.com/in/ferhat-bozkurt"
+                href="https://www.linkedin.com/in/ferhat-bozkurt" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
@@ -71,7 +87,7 @@ export default function Contact() {
                 <span>LinkedIn</span>
               </a>
               <a 
-                href="https://github.com/ferhatbozkurt123"
+                href="https://github.com/ferhatbozkurt123" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-4 text-gray-300 hover:text-blue-400 transition-all duration-300 group"
@@ -86,11 +102,11 @@ export default function Contact() {
 
           {/* İletişim Formu */}
           <div className="glass-card gradient-border rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-blue-400 mb-6">Mesaj Gönder</h2>
+            <h2 className="text-2xl font-bold text-blue-400 mb-6">{t('contact.sendMessage')}</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  İsim
+                  {t('contact.name')}
                 </label>
                 <input
                   type="text"
@@ -100,12 +116,12 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="Adınız Soyadınız"
+                  placeholder={t('contact.name')}
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  E-posta
+                  {t('contact.email')}
                 </label>
                 <input
                   type="email"
@@ -115,12 +131,12 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                  placeholder="ornek@email.com"
+                  placeholder={t('contact.email')}
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Mesaj
+                  {t('contact.message')}
                 </label>
                 <textarea
                   id="message"
@@ -130,7 +146,7 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Mesajınızı buraya yazın..."
+                  placeholder={t('contact.message')}
                 ></textarea>
               </div>
               <button
@@ -143,18 +159,18 @@ export default function Contact() {
                   }
                 `}
               >
-                {isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
+                {isSubmitting ? t('contact.send') + '...' : t('contact.send')}
               </button>
 
               {submitStatus === 'success' && (
                 <div className="mt-4 p-4 rounded-lg bg-green-600/20 text-green-400">
-                  Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağım.
+                  {t('contact.success')}
                 </div>
               )}
 
               {submitStatus === 'error' && (
                 <div className="mt-4 p-4 rounded-lg bg-red-600/20 text-red-400">
-                  Mesajınız gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.
+                  {t('contact.error')}
                 </div>
               )}
             </form>

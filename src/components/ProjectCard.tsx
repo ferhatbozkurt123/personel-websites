@@ -1,14 +1,16 @@
 import ImageSlider from './ImageSlider';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import { slugify } from '../../src/utils/slugify';
 
 interface ProjectCardProps {
-  title: string;
-  description: string;
+  title: { tr: string; en: string };
+  description: { tr: string; en: string };
   technologies: string[];
   images: string[];
   projectUrl: string;
-  category: string;
-  features?: string[];
+  category: { tr: string; en: string };
+  features?: { tr: string; en: string }[];
 }
 
 export default function ProjectCard({
@@ -20,30 +22,29 @@ export default function ProjectCard({
   category,
   features
 }: ProjectCardProps) {
+  const { i18n, t } = useTranslation();
+  const lang = i18n.language as 'tr' | 'en';
   // URL-friendly slug oluştur
-  const slug = title
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+  const slug = slugify(title.tr);
 
   return (
     <div className="glass-card gradient-border rounded-xl overflow-hidden group hover-glow">
       <div className="h-44 relative overflow-hidden">
-        <ImageSlider images={images} title={title} />
+        <ImageSlider images={images} title={title[lang]} />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-4">
           <p className="text-white text-sm line-clamp-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            {description}
+            {description[lang]}
           </p>
         </div>
         <span className="absolute top-3 right-3 px-2.5 py-1 bg-blue-600/20 backdrop-blur-sm text-blue-300 rounded-lg text-xs font-medium">
-          {category}
+          {category[lang]}
         </span>
       </div>
 
       <div className="p-4">
         <div className="mb-3">
           <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text group-hover:from-blue-300 group-hover:to-blue-500 transition-all duration-300 line-clamp-1">
-            {title}
+            {title[lang]}
           </h3>
         </div>
         
@@ -53,11 +54,11 @@ export default function ProjectCard({
               {features.slice(0, 2).map((feature, index) => (
                 <li key={index} className="flex items-center gap-1.5">
                   <span className="w-1 h-1 rounded-full bg-blue-400/70"></span>
-                  <span className="line-clamp-1">{feature}</span>
+                  <span className="line-clamp-1">{feature[lang]}</span>
                 </li>
               ))}
               {features.length > 2 && (
-                <li className="text-blue-400/80 text-xs pl-2.5">+ {features.length - 2} daha fazla...</li>
+                <li className="text-blue-400/80 text-xs pl-2.5">+ {features.length - 2} {t('projects.more')}</li>
               )}
             </ul>
           </div>
@@ -84,7 +85,7 @@ export default function ProjectCard({
             href={`/projects/${slug}`}
             className="flex items-center gap-1 text-blue-400/80 text-sm group-hover:text-blue-300 transition-colors duration-300"
           >
-            <span>Detaylar</span>
+            <span>{t('projects.detail') || 'Detaylar'}</span>
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

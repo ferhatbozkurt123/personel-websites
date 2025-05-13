@@ -3,8 +3,10 @@
 import { useState, useMemo } from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import { Category, projects } from './projects-data';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<Category>('Hepsi');
   const [selectedTech, setSelectedTech] = useState<string>('');
 
@@ -41,7 +43,7 @@ export default function Projects() {
         <div className="glass-card gradient-border rounded-2xl p-6 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-transparent bg-clip-text">
-              Projelerim
+              {t('projects.title')}
             </h1>
             {(selectedCategory !== 'Hepsi' || selectedTech) && (
               <button
@@ -51,7 +53,7 @@ export default function Projects() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-                Filtreleri Temizle
+                {t('projects.clearFilters')}
               </button>
             )}
           </div>
@@ -60,7 +62,7 @@ export default function Projects() {
           <div className="space-y-5">
             {/* Kategori Filtreleri */}
             <div>
-              <h2 className="text-base font-medium text-blue-400 mb-3">Kategoriler</h2>
+              <h2 className="text-base font-medium text-blue-400 mb-3">{t('projects.categories')}</h2>
               <div className="flex flex-wrap gap-2">
                 {categories.map((category) => (
                   <button
@@ -80,7 +82,7 @@ export default function Projects() {
 
             {/* Teknoloji Filtreleri */}
             <div>
-              <h2 className="text-base font-medium text-blue-400 mb-3">Teknolojiler</h2>
+              <h2 className="text-base font-medium text-blue-400 mb-3">{t('projects.technologies')}</h2>
               <div className="flex flex-wrap gap-2">
                 {allTechnologies.map((tech) => (
                   <button
@@ -101,7 +103,7 @@ export default function Projects() {
             {/* Aktif Filtreler */}
             {(selectedCategory !== 'Hepsi' || selectedTech) && (
               <div className="flex items-center gap-2 text-xs text-gray-300 pt-2">
-                <span>Aktif Filtreler:</span>
+                <span>{t('projects.activeFilters')}:</span>
                 {selectedCategory !== 'Hepsi' && (
                   <span className="bg-blue-600/20 text-blue-400 px-2.5 py-1 rounded-lg">
                     {selectedCategory}
@@ -128,13 +130,13 @@ export default function Projects() {
         {filteredProjects.length === 0 && (
           <div className="glass-card gradient-border rounded-2xl p-6 text-center">
             <p className="text-gray-300 text-base mb-3">
-              Seçilen filtrelere uygun proje bulunamadı.
+              {t('projects.noResults')}
             </p>
             <button
               onClick={resetFilters}
               className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-300 text-sm"
             >
-              Filtreleri Temizle
+              {t('projects.clearFilters')}
             </button>
           </div>
         )}

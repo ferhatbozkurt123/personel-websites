@@ -3,6 +3,7 @@
 import { projects } from '../projects-data';
 import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
+import { slugify } from '../../../utils/slugify';
 
 /**
  * @param {{ params: { slug: string } }} props
@@ -10,19 +11,16 @@ import Link from 'next/link';
 export default function ProjectDetail({ params }: any) {
   // URL'deki slug'a göre projeyi bul
   const project = projects.find(p => {
-    const projectSlug = p.title
-      .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^a-z0-9-]/g, '');
+    const projectSlug = slugify(p.title.tr);
     return projectSlug === params.slug;
   });
 
   if (!project) {
     return (
       <div className="min-h-screen p-8 flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold mb-4">Proje Bulunamadı</h1>
+        <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
         <Link href="/projects" className="text-blue-600 hover:underline">
-          Projelere Dön
+          Back to Projects
         </Link>
       </div>
     );

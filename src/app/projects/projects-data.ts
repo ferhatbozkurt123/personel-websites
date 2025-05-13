@@ -1,23 +1,30 @@
 export type Category = 'Hepsi' | 'Web' | 'Mobil' | 'AI' | 'Network Programming' | 'Oyun';
 
 export interface Project {
-  title: string;
-  description: string;
+  title: { tr: string; en: string };
+  description: { tr: string; en: string };
   technologies: string[];
   images: string[];
   projectUrl: string;
-  category: Category;
-  features?: string[];
+  category: { tr: string; en: string };
+  features?: { tr: string; en: string }[];
 }
 
 export const projects: Project[] = [
   {
-    title: "Stok ve Satış Takip Sistemi",
-    description: "Angular ve .NET Core teknolojileri kullanılarak geliştirilmiş kapsamlı bir stok ve satış yönetim sistemi. Stok takibi, satış yönetimi, müşteri ilişkileri (CRM), tedarikçi yönetimi ve detaylı raporlama özellikleri ile modern işletmelerin tüm ihtiyaçlarını karşılar.",
+    title: {
+      tr: "Stok ve Satış Takip Sistemi",
+      en: "Stock and Sales Management System"
+    },
+    description: {
+      tr: "Angular ve .NET Core teknolojileri kullanılarak geliştirilmiş kapsamlı bir stok ve satış yönetim sistemi. Stok takibi, satış yönetimi, müşteri ilişkileri (CRM), tedarikçi yönetimi ve detaylı raporlama özellikleri ile modern işletmelerin tüm ihtiyaçlarını karşılar.",
+      en: "A comprehensive stock and sales management system developed using Angular and .NET Core technologies. It meets all the needs of modern businesses with features such as stock tracking, sales management, customer relations (CRM), supplier management, and detailed reporting."
+    },
     technologies: [
       "Angular",
       ".NET",
-      "SQL Server"
+      "Azure SQL Server",
+      "Azure SQL"
     ],
     images: [
       "/projects/stock-automation/1.png",
@@ -31,23 +38,62 @@ export const projects: Project[] = [
       "/projects/stock-automation/9.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/stock-automation",
-    category: "Web",
+    category: {
+      tr: "Web",
+      en: "Web"
+    },
     features: [
-      "Ürün ve kategori yönetimi",
-      "Gerçek zamanlı stok takibi",
-      "Barkod sistemi entegrasyonu",
-      "Satış ve ödeme işlemleri",
-      "Müşteri ve tedarikçi yönetimi",
-      "Cari hesap takibi",
-      "Kapsamlı raporlama sistemi",
-      "Rol tabanlı yetkilendirme",
-      "Otomatik yedekleme sistemi",
-      "Mobil uyumlu tasarım"
+      {
+        tr: "Ürün ve kategori yönetimi",
+        en: "Product and category management"
+      },
+      {
+        tr: "Gerçek zamanlı stok takibi",
+        en: "Real-time stock tracking"
+      },
+      {
+        tr: "Barkod sistemi entegrasyonu",
+        en: "Barcode system integration"
+      },
+      {
+        tr: "Satış ve ödeme işlemleri",
+        en: "Sales and payment transactions"
+      },
+      {
+        tr: "Müşteri ve tedarikçi yönetimi",
+        en: "Customer and supplier management"
+      },
+      {
+        tr: "Cari hesap takibi",
+        en: "Current account tracking"
+      },
+      {
+        tr: "Kapsamlı raporlama sistemi",
+        en: "Comprehensive reporting system"
+      },
+      {
+        tr: "Rol tabanlı yetkilendirme",
+        en: "Role-based authorization"
+      },
+      {
+        tr: "Otomatik yedekleme sistemi",
+        en: "Automatic backup system"
+      },
+      {
+        tr: "Mobil uyumlu tasarım",
+        en: "Mobile-friendly design"
+      }
     ]
   },
   {
-    title: "Reinforcement Learning ile Enerji Yönetimi",
-    description: "Bu proje, akıllı ev sistemlerinde enerji tüketimini optimize etmek için Derin Pekiştirmeli Öğrenme (Deep Reinforcement Learning) kullanmaktadır. DDPG (Deep Deterministic Policy Gradient) algoritması kullanılarak, ev aletlerinin enerji tüketimini optimize ederken kullanıcı konforunu da göz önünde bulunduran bir sistem geliştirilmiştir.",
+    title: {
+      tr: "Reinforcement Learning ile Enerji Yönetimi",
+      en: "Energy Management with Reinforcement Learning"
+    },
+    description: {
+      tr: "Bu proje, akıllı ev sistemlerinde enerji tüketimini optimize etmek için Derin Pekiştirmeli Öğrenme (Deep Reinforcement Learning) kullanmaktadır. DDPG (Deep Deterministic Policy Gradient) algoritması kullanılarak, ev aletlerinin enerji tüketimini optimize ederken kullanıcı konforunu da göz önünde bulunduran bir sistem geliştirilmiştir.",
+      en: "This project uses Deep Reinforcement Learning to optimize energy consumption in smart home systems. Using the DDPG (Deep Deterministic Policy Gradient) algorithm, a system is developed that optimizes the energy consumption of home appliances while considering user comfort."
+    },
     technologies: [
       "Python",
       "Flask",
@@ -59,18 +105,42 @@ export const projects: Project[] = [
       "/projects/energy-rl/3.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/smart_home_energy_rl",
-    category: "AI",
+    category: {
+      tr: "AI",
+      en: "AI"
+    },
     features: [
-      "DDPG tabanlı akıllı enerji yönetimi",
-      "Gerçek zamanlı cihaz kontrolü ve optimizasyonu",
-      "Web tabanlı dashboard ile görselleştirme",
-      "Enerji tüketimi, maliyet ve konfor analizi",
-      "Cihaz çalışma saatlerinin optimizasyonu"
+      {
+        tr: "DDPG tabanlı akıllı enerji yönetimi",
+        en: "DDPG-based smart energy management"
+      },
+      {
+        tr: "Gerçek zamanlı cihaz kontrolü ve optimizasyonu",
+        en: "Real-time device control and optimization"
+      },
+      {
+        tr: "Web tabanlı dashboard ile görselleştirme",
+        en: "Visualization with web-based dashboard"
+      },
+      {
+        tr: "Enerji tüketimi, maliyet ve konfor analizi",
+        en: "Analysis of energy consumption, cost, and comfort"
+      },
+      {
+        tr: "Cihaz çalışma saatlerinin optimizasyonu",
+        en: "Optimization of device operating hours"
+      }
     ]
   },
   {
-    title: "Trinity Game",
-    description: "Unity ile geliştirilmiş, dinamik oyun mekanikleri, güç takviyesi sistemleri ve düşman yapay zekası içeren çok oyunculu bir aksiyon oyunu. Çoklu oyuncu desteği, gelişmiş savaş mekanikleri, özelleştirilebilir karakterler ve zengin ses efektleri ile tam kapsamlı bir oyun deneyimi sunar.",
+    title: {
+      tr: "Trinity Game",
+      en: "Trinity Game"
+    },
+    description: {
+      tr: "Unity ile geliştirilmiş, dinamik oyun mekanikleri, güç takviyesi sistemleri ve düşman yapay zekası içeren çok oyunculu bir aksiyon oyunu. Çoklu oyuncu desteği, gelişmiş savaş mekanikleri, özelleştirilebilir karakterler ve zengin ses efektleri ile tam kapsamlı bir oyun deneyimi sunar.",
+      en: "A multiplayer action game developed with Unity, featuring dynamic game mechanics, power-up systems, and enemy AI. It offers a complete gaming experience with multiplayer support, advanced combat mechanics, customizable characters, and rich sound effects."
+    },
     technologies: [
       "Unity",
       "C#"
@@ -83,21 +153,54 @@ export const projects: Project[] = [
       "/projects/trinity-game/5.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/trinity-game",
-    category: "Oyun",
+    category: {
+      tr: "Oyun",
+      en: "Game"
+    },
     features: [
-      "Çok oyunculu ağ tabanlı oyun deneyimi",
-      "Dinamik savaş sistemi (bomba ve ışık mekanikleri)",
-      "Gelişmiş düşman yapay zeka sistemi",
-      "Özelleştirilebilir karakterler",
-      "Güç takviyesi sistemi",
-      "Entegre ses efektleri ve müzikler",
-      "Oyun içi duraklatma özelliği",
-      "Sade ve kullanışlı arayüz"
+      {
+        tr: "Çok oyunculu ağ tabanlı oyun deneyimi",
+        en: "Multiplayer network-based game experience"
+      },
+      {
+        tr: "Dinamik savaş sistemi (bomba ve ışık mekanikleri)",
+        en: "Dynamic combat system (bomb and light mechanics)"
+      },
+      {
+        tr: "Gelişmiş düşman yapay zeka sistemi",
+        en: "Advanced enemy AI system"
+      },
+      {
+        tr: "Özelleştirilebilir karakterler",
+        en: "Customizable characters"
+      },
+      {
+        tr: "Güç takviyesi sistemi",
+        en: "Power-up system"
+      },
+      {
+        tr: "Entegre ses efektleri ve müzikler",
+        en: "Integrated sound effects and music"
+      },
+      {
+        tr: "Oyun içi duraklatma özelliği",
+        en: "In-game pause feature"
+      },
+      {
+        tr: "Sade ve kullanışlı arayüz",
+        en: "Simple and user-friendly interface"
+      }
     ]
   },
   {
-    title: "SmartHome - Akıllı Ev Yönetim Uygulaması",
-    description: "Modern ve kullanıcı dostu bir arayüze sahip, kapsamlı bir akıllı ev yönetim uygulaması. SwiftUI ile geliştirilmiş bu uygulama, evinizin tüm akıllı cihazlarını tek bir noktadan kontrol etmenizi sağlar. Hava durumu takibi, enerji tüketim grafikleri, güvenlik sistemi yönetimi ve oda bazlı kontroller gibi kapsamlı özellikler sunar.",
+    title: {
+      tr: "SmartHome - Akıllı Ev Yönetim Uygulaması",
+      en: "SmartHome - Smart Home Management App"
+    },
+    description: {
+      tr: "Modern ve kullanıcı dostu bir arayüze sahip, kapsamlı bir akıllı ev yönetim uygulaması. SwiftUI ile geliştirilmiş bu uygulama, evinizin tüm akıllı cihazlarını tek bir noktadan kontrol etmenizi sağlar. Hava durumu takibi, enerji tüketim grafikleri, güvenlik sistemi yönetimi ve oda bazlı kontroller gibi kapsamlı özellikler sunar.",
+      en: "A comprehensive smart home management app with a modern and user-friendly interface. Developed with SwiftUI, this app allows you to control all your smart devices from a single point. It offers features such as weather tracking, energy consumption graphs, security system management, and room-based controls."
+    },
     technologies: [
       "iOS",
       "Swift",
@@ -112,21 +215,30 @@ export const projects: Project[] = [
       "/projects/smart-home/6.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/smart-home",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "Ana kontrol paneli ve hızlı erişim butonları",
-      "Güvenlik sistemi ve kamera yönetimi",
-      "Oda bazlı aydınlatma ve termostat kontrolü",
-      "Enerji tüketim takibi ve raporlama",
-      "Bildirim yönetimi ve özelleştirilebilir arayüz",
-      "Karanlık mod desteği",
-      "Animasyonlu arayüz elemanları",
-      "Modern SwiftUI mimarisi ve MVVM tasarım deseni"
+      { tr: "Ana kontrol paneli ve hızlı erişim butonları", en: "Main control panel and quick access buttons" },
+      { tr: "Güvenlik sistemi ve kamera yönetimi", en: "Security system and camera management" },
+      { tr: "Oda bazlı aydınlatma ve termostat kontrolü", en: "Room-based lighting and thermostat control" },
+      { tr: "Enerji tüketim takibi ve raporlama", en: "Energy consumption tracking and reporting" },
+      { tr: "Bildirim yönetimi ve özelleştirilebilir arayüz", en: "Notification management and customizable interface" },
+      { tr: "Karanlık mod desteği", en: "Dark mode support" },
+      { tr: "Animasyonlu arayüz elemanları", en: "Animated UI elements" },
+      { tr: "Modern SwiftUI mimarisi ve MVVM tasarım deseni", en: "Modern SwiftUI architecture and MVVM design pattern" }
     ]
   },
   {
-    title: "FTP İstemci Programı",
-    description: "Python programlama dili kullanılarak geliştirilmiş kullanıcı dostu bir FTP istemci programı. Renkli terminal arayüzü üzerinden temel FTP işlemlerini kolayca gerçekleştirebilmenizi sağlar. Dosya transferi, dizin yönetimi ve detaylı hata raporlama özellikleri ile güvenilir bir FTP istemcisi.",
+    title: {
+      tr: "FTP İstemci Programı",
+      en: "FTP Client Program"
+    },
+    description: {
+      tr: "Python programlama dili kullanılarak geliştirilmiş kullanıcı dostu bir FTP istemci programı. Renkli terminal arayüzü üzerinden temel FTP işlemlerini kolayca gerçekleştirebilmenizi sağlar. Dosya transferi, dizin yönetimi ve detaylı hata raporlama özellikleri ile güvenilir bir FTP istemcisi.",
+      en: "A user-friendly FTP client program developed using Python. It allows you to easily perform basic FTP operations through a colorful terminal interface. With features such as file transfer, directory management, and detailed error reporting, it is a reliable FTP client."
+    },
     technologies: [
       "Python",
       "Networking",
@@ -136,22 +248,31 @@ export const projects: Project[] = [
       "/projects/ftp-client/1.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/ftp-client",
-    category: "Network Programming",
+    category: {
+      tr: "Network Programming",
+      en: "Network Programming"
+    },
     features: [
-      "FTP sunucusuna bağlanma ve giriş yapma",
-      "Yerel ve uzak dizin içeriğini listeleme",
-      "Dosya yükleme ve indirme",
-      "Dizin oluşturma ve silme",
-      "Dosya adı değiştirme",
-      "Renkli ve kullanıcı dostu terminal arayüzü",
-      "Detaylı hata mesajları ve durum bildirimleri",
-      "Güvenli bağlantı yönetimi",
-      "Kolay kurulum ve kullanım"
+      { tr: "FTP sunucusuna bağlanma ve giriş yapma", en: "Connect and login to FTP server" },
+      { tr: "Yerel ve uzak dizin içeriğini listeleme", en: "List local and remote directory contents" },
+      { tr: "Dosya yükleme ve indirme", en: "Upload and download files" },
+      { tr: "Dizin oluşturma ve silme", en: "Create and delete directories" },
+      { tr: "Dosya adı değiştirme", en: "Rename files" },
+      { tr: "Renkli ve kullanıcı dostu terminal arayüzü", en: "Colorful and user-friendly terminal interface" },
+      { tr: "Detaylı hata mesajları ve durum bildirimleri", en: "Detailed error messages and status notifications" },
+      { tr: "Güvenli bağlantı yönetimi", en: "Secure connection management" },
+      { tr: "Kolay kurulum ve kullanım", en: "Easy setup and usage" }
     ]
   },
   {
-    title: "Taşınmaz Varlık Yönetim Sistemi",
-    description: "Taşınmaz (gayrimenkul) varlıkların etkin yönetimi için geliştirilmiş web tabanlı bir uygulama. .NET 7 Web API ve Angular 15+ kullanılarak geliştirilen sistem, taşınmazların detaylı yönetimi, harita üzerinde konumlandırma, rol tabanlı yetkilendirme ve değer karşılaştırma özellikleri sunar. Katmanlı mimari ve modern web teknolojileri kullanılarak oluşturulmuştur.",
+    title: {
+      tr: "Taşınmaz Varlık Yönetim Sistemi",
+      en: "Property Management System"
+    },
+    description: {
+      tr: "Taşınmaz (gayrimenkul) varlıkların etkin yönetimi için geliştirilmiş web tabanlı bir uygulama. .NET 7 Web API ve Angular 15+ kullanılarak geliştirilen sistem, taşınmazların detaylı yönetimi, harita üzerinde konumlandırma, rol tabanlı yetkilendirme ve değer karşılaştırma özellikleri sunar. Katmanlı mimari ve modern web teknolojileri kullanılarak oluşturulmuştur.",
+      en: "A web-based application developed for effective management of real estate assets. Built with .NET 7 Web API and Angular 15+, the system offers detailed management, map-based positioning, role-based authorization, and value comparison features. It is built using layered architecture and modern web technologies."
+    },
     technologies: [
       ".NET",
       "Angular",
@@ -162,21 +283,30 @@ export const projects: Project[] = [
       "/projects/property-management/2.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/property-management",
-    category: "Web",
+    category: {
+      tr: "Web",
+      en: "Web"
+    },
     features: [
-      "Taşınmaz varlık yönetimi (CRUD işlemleri)",
-      "Detaylı taşınmaz bilgi görüntüleme",
-      "Rol tabanlı kullanıcı yetkilendirme",
-      "Harita üzerinden konum bazlı görüntüleme",
-      "Belge ve medya ekleme desteği",
-      "Harita bazlı değer karşılaştırması",
-      "Katmanlı mimari yapı",
-      "Güvenli API entegrasyonu"
+      { tr: "Taşınmaz varlık yönetimi (CRUD işlemleri)", en: "Property management (CRUD operations)" },
+      { tr: "Detaylı taşınmaz bilgi görüntüleme", en: "Detailed property information display" },
+      { tr: "Rol tabanlı kullanıcı yetkilendirme", en: "Role-based user authorization" },
+      { tr: "Harita üzerinden konum bazlı görüntüleme", en: "Map-based location display" },
+      { tr: "Belge ve medya ekleme desteği", en: "Document and media attachment support" },
+      { tr: "Harita bazlı değer karşılaştırması", en: "Map-based value comparison" },
+      { tr: "Katmanlı mimari yapı", en: "Layered architecture" },
+      { tr: "Güvenli API entegrasyonu", en: "Secure API integration" }
     ]
   },
   {
-    title: "React E-Ticaret Demo",
-    description: "Next.js 13+ ve TypeScript ile geliştirilmiş modern ve ölçeklenebilir bir e-ticaret platformu. Responsive tasarım, gelişmiş ürün yönetimi, kullanıcı hesap yönetimi, alışveriş sepeti, favori ürünler, gelişmiş arama, admin paneli, kampanya yönetimi, toplu sipariş ve ürün karşılaştırma gibi kapsamlı özelliklere sahip.",
+    title: {
+      tr: "React E-Ticaret Demo",
+      en: "React E-Commerce Demo"
+    },
+    description: {
+      tr: "Next.js 13+ ve TypeScript ile geliştirilmiş modern ve ölçeklenebilir bir e-ticaret platformu. Responsive tasarım, gelişmiş ürün yönetimi, kullanıcı hesap yönetimi, alışveriş sepeti, favori ürünler, gelişmiş arama, admin paneli, kampanya yönetimi, toplu sipariş ve ürün karşılaştırma gibi kapsamlı özelliklere sahip.",
+      en: "A modern and scalable e-commerce platform developed with Next.js 13+ and TypeScript. It features responsive design, advanced product management, user account management, shopping cart, favorites, advanced search, admin panel, campaign management, bulk orders, and product comparison."
+    },
     technologies: [
       "React",
       "TypeScript",
@@ -190,23 +320,32 @@ export const projects: Project[] = [
       "/projects/ecommerce-demo/5.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/ecommerce-demo",
-    category: "Web",
+    category: {
+      tr: "Web",
+      en: "Web"
+    },
     features: [
-      "Responsive tasarım",
-      "Gelişmiş ürün yönetimi",
-      "Kullanıcı hesap yönetimi",
-      "Alışveriş sepeti ve favori ürünler",
-      "Gelişmiş arama fonksiyonu",
-      "Admin paneli",
-      "Kampanya yönetimi",
-      "Toplu sipariş",
-      "Ürün karşılaştırma",
-      "Rol tabanlı yetkilendirme"
+      { tr: "Responsive tasarım", en: "Responsive design" },
+      { tr: "Gelişmiş ürün yönetimi", en: "Advanced product management" },
+      { tr: "Kullanıcı hesap yönetimi", en: "User account management" },
+      { tr: "Alışveriş sepeti ve favori ürünler", en: "Shopping cart and favorites" },
+      { tr: "Gelişmiş arama fonksiyonu", en: "Advanced search function" },
+      { tr: "Admin paneli", en: "Admin panel" },
+      { tr: "Kampanya yönetimi", en: "Campaign management" },
+      { tr: "Toplu sipariş", en: "Bulk order" },
+      { tr: "Ürün karşılaştırma", en: "Product comparison" },
+      { tr: "Rol tabanlı yetkilendirme", en: "Role-based authorization" }
     ]
   },
   {
-    title: "Karbon Ayak İzi Takip Uygulaması",
-    description: "Bu mobil uygulama, kullanıcıların karbon ayak izlerini takip etmelerini, analiz etmelerini ve daha sürdürülebilir yaşam alışkanlıkları geliştirmelerini amaçlar. Kullanıcı dostu arayüzü ile ulaşım, enerji ve gıda gibi temel kategorilerdeki karbon salınımını izleme imkânı sunar.",
+    title: {
+      tr: "Karbon Ayak İzi Takip Uygulaması",
+      en: "Carbon Footprint Tracking App"
+    },
+    description: {
+      tr: "Bu mobil uygulama, kullanıcıların karbon ayak izlerini takip etmelerini, analiz etmelerini ve daha sürdürülebilir yaşam alışkanlıkları geliştirmelerini amaçlar. Kullanıcı dostu arayüzü ile ulaşım, enerji ve gıda gibi temel kategorilerdeki karbon salınımını izleme imkânı sunar.",
+      en: "This mobile app aims to help users track and analyze their carbon footprint and develop more sustainable lifestyle habits. With its user-friendly interface, it allows tracking carbon emissions in key categories such as transportation, energy, and food."
+    },
     technologies: [
       "iOS",
       "Swift",
@@ -222,18 +361,27 @@ export const projects: Project[] = [
       "/projects/carbon-footprint/7.png"
     ],
     projectUrl: "https://github.com/kullaniciadi/karbon-ayak-izi",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "Toplam Karbon Ayak İzi Hesaplama",
-      "Kategori Bazlı Dağılım",
-      "Firebase Entegrasyonu",
-      "Veri Girişi & Analiz",
-      "Sade ve Anlaşılır UI"
+      { tr: "Toplam Karbon Ayak İzi Hesaplama", en: "Total Carbon Footprint Calculation" },
+      { tr: "Kategori Bazlı Dağılım", en: "Category-based distribution" },
+      { tr: "Firebase Entegrasyonu", en: "Firebase Integration" },
+      { tr: "Veri Girişi & Analiz", en: "Data Entry & Analysis" },
+      { tr: "Sade ve Anlaşılır UI", en: "Simple and Clear UI" }
     ]
   },
   {
-    title: "Ehliyet Sınavı Hazırlık Uygulaması",
-    description: "iOS platformu için geliştirilmiş kapsamlı bir ehliyet sınavı hazırlık uygulaması. 2019'dan 2025'e kadar olan sınav sorularını içeren, yıllara göre kategorize edilmiş içeriğiyle kullanıcıların sınavlara hazırlanmasını kolaylaştırır. SwiftUI ile geliştirilmiş modern ve kullanıcı dostu arayüzü sayesinde kolay navigasyon ve etkili çalışma imkanı sunar.",
+    title: {
+      tr: "Ehliyet Sınavı Hazırlık Uygulaması",
+      en: "Driving License Exam Preparation App"
+    },
+    description: {
+      tr: "iOS platformu için geliştirilmiş kapsamlı bir ehliyet sınavı hazırlık uygulaması. 2019'dan 2025'e kadar olan sınav sorularını içeren, yıllara göre kategorize edilmiş içeriğiyle kullanıcıların sınavlara hazırlanmasını kolaylaştırır. SwiftUI ile geliştirilmiş modern ve kullanıcı dostu arayüzü sayesinde kolay navigasyon ve etkili çalışma imkanı sunar.",
+      en: "A comprehensive driving license exam preparation app developed for the iOS platform. It includes exam questions from 2019 to 2025, categorized by year, making it easier for users to prepare for exams. With its modern and user-friendly interface developed with SwiftUI, it offers easy navigation and effective study opportunities."
+    },
     technologies: [
       "iOS",
       "Swift",
@@ -251,21 +399,30 @@ export const projects: Project[] = [
       "/projects/driving-exam/9.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/driving-exam",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "2019-2025 arası sınav soruları",
-      "Yıllara göre kategorize edilmiş içerik",
-      "Modern ve kullanıcı dostu arayüz",
-      "Kolay navigasyon",
-      "Güncel sınav yılı vurgusu",
-      "Aylık sınav detayları",
-      "Yıl bazlı görünüm seçenekleri",
-      "Detaylı sınav özeti"
+      { tr: "2019-2025 arası sınav soruları", en: "Exam questions from 2019-2025" },
+      { tr: "Yıllara göre kategorize edilmiş içerik", en: "Content categorized by years" },
+      { tr: "Modern ve kullanıcı dostu arayüz", en: "Modern and user-friendly interface" },
+      { tr: "Kolay navigasyon", en: "Easy navigation" },
+      { tr: "Güncel sınav yılı vurgusu", en: "Current exam year emphasis" },
+      { tr: "Aylık sınav detayları", en: "Monthly exam details" },
+      { tr: "Yıl bazlı görünüm seçenekleri", en: "Year-based view options" },
+      { tr: "Detaylı sınav özeti", en: "Detailed exam summary" }
     ]
   },
   {
-    title: "POMEM Sınav Hazırlık Uygulaması",
-    description: "iOS platformu için geliştirilmiş kapsamlı bir POMEM sınavı hazırlık uygulaması. Modern ve kullanıcı dostu arayüzü, kategorilere ayrılmış soru bankası, detaylı istatistikler ve kişisel çalışma performansı analizi özellikleriyle adayların sınava hazırlanma sürecini kolaylaştırır.",
+    title: {
+      tr: "POMEM Sınav Hazırlık Uygulaması",
+      en: "POMEM Exam Preparation App"
+    },
+    description: {
+      tr: "iOS platformu için geliştirilmiş kapsamlı bir POMEM sınavı hazırlık uygulaması. Modern ve kullanıcı dostu arayüzü, kategorilere ayrılmış soru bankası, detaylı istatistikler ve kişisel çalışma performansı analizi özellikleriyle adayların sınava hazırlanma sürecini kolaylaştırır.",
+      en: "A comprehensive POMEM exam preparation app developed for the iOS platform. With its modern and user-friendly interface, categorized question bank, detailed statistics, and personal study performance analysis features, it makes the exam preparation process easier for candidates."
+    },
     technologies: [
       "iOS",
       "Swift",
@@ -278,19 +435,28 @@ export const projects: Project[] = [
       "/projects/pomem-app/4.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/pomem-app",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "Modern ve kullanıcı dostu arayüz",
-      "Kategorilere ayrılmış soru bankası",
-      "Açık uçlu soru-cevap formatı",
-      "Detaylı istatistikler ve ilerleme takibi",
-      "Kişisel çalışma performansı analizi",
-      "Göz yormayan tasarım"
+      { tr: "Modern ve kullanıcı dostu arayüz", en: "Modern and user-friendly interface" },
+      { tr: "Kategorilere ayrılmış soru bankası", en: "Categorized question bank" },
+      { tr: "Açık uçlu soru-cevap formatı", en: "Open-ended question-answer format" },
+      { tr: "Detaylı istatistikler ve ilerleme takibi", en: "Detailed statistics and progress tracking" },
+      { tr: "Kişisel çalışma performansı analizi", en: "Personal study performance analysis" },
+      { tr: "Göz yormayan tasarım", en: "Eye-friendly design" }
     ]
   },
   {
-    title: "ExamTracker - Deneme Sınavı Takip Uygulaması",
-    description: "React Native ile geliştirilmiş, öğrencilerin sınavlarını ve çalışma programlarını takip etmelerine yardımcı olan kapsamlı bir mobil uygulama. Sınav takibi, çalışma programı oluşturma, sonuç analizi ve hatırlatıcı özellikleri ile öğrencilerin akademik başarısını artırmayı hedefler.",
+    title: {
+      tr: "ExamTracker - Deneme Sınavı Takip Uygulaması",
+      en: "ExamTracker - Mock Exam Tracking App"
+    },
+    description: {
+      tr: "React Native ile geliştirilmiş, öğrencilerin sınavlarını ve çalışma programlarını takip etmelerine yardımcı olan kapsamlı bir mobil uygulama. Sınav takibi, çalışma programı oluşturma, sonuç analizi ve hatırlatıcı özellikleri ile öğrencilerin akademik başarısını artırmayı hedefler.",
+      en: "A comprehensive mobile app developed with React Native to help students track their exams and study schedules. It aims to increase students' academic success with features such as exam tracking, study schedule creation, result analysis, and reminders."
+    },
     technologies: [
       "React Native",
       "TypeScript",
@@ -303,18 +469,27 @@ export const projects: Project[] = [
       "/projects/exam-tracker/4.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/exam-tracker",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "Sınav takibi ve planlaması",
-      "Çalışma programı oluşturma",
-      "Sınav sonuçlarını kaydetme ve analiz etme",
-      "Hatırlatıcılar ve bildirimler",
-      "Kullanıcı dostu arayüz"
+      { tr: "Sınav takibi ve planlaması", en: "Exam tracking and planning" },
+      { tr: "Çalışma programı oluşturma", en: "Creating a study schedule" },
+      { tr: "Sınav sonuçlarını kaydetme ve analiz etme", en: "Recording and analyzing exam results" },
+      { tr: "Hatırlatıcılar ve bildirimler", en: "Reminders and notifications" },
+      { tr: "Kullanıcı dostu arayüz", en: "User-friendly interface" }
     ]
   },
   {
-    title: "Para Birimi Takipçisi",
-    description: "Modern ve kullanıcı dostu bir döviz kuru takip uygulaması. SwiftUI ile geliştirilmiş, MVVM mimarisi kullanan uygulama, canlı döviz kurları, altın fiyatları, detaylı grafik analizleri ve bildirim özellikleri sunar. Koyu/açık tema desteği, widget entegrasyonu ve yerel veri önbelleği gibi modern özelliklere sahiptir.",
+    title: {
+      tr: "Para Birimi Takipçisi",
+      en: "Currency Tracker"
+    },
+    description: {
+      tr: "Modern ve kullanıcı dostu bir döviz kuru takip uygulaması. SwiftUI ile geliştirilmiş, MVVM mimarisi kullanan uygulama, canlı döviz kurları, altın fiyatları, detaylı grafik analizleri ve bildirim özellikleri sunar. Koyu/açık tema desteği, widget entegrasyonu ve yerel veri önbelleği gibi modern özelliklere sahiptir.",
+      en: "A modern and user-friendly currency tracking app. Developed with SwiftUI and using the MVVM architecture, the app offers live exchange rates, gold prices, detailed chart analysis, and notification features. It also includes modern features such as dark/light theme support, widget integration, and local data caching."
+    },
     technologies: [
       "iOS",
       "Swift",
@@ -327,16 +502,19 @@ export const projects: Project[] = [
       "/projects/currency-tracker/4.png"
     ],
     projectUrl: "https://github.com/ferhatbozkurt123/currency-tracker",
-    category: "Mobil",
+    category: {
+      tr: "Mobil",
+      en: "Mobile"
+    },
     features: [
-      "Canlı döviz kurları ve altın fiyatları",
-      "Detaylı grafik analizleri ve trend takibi",
-      "Anlık döviz çevirici",
-      "Favori para birimleri yönetimi",
-      "Kur değişim bildirimleri",
-      "Koyu/Açık tema desteği",
-      "Widget entegrasyonu",
-      "Yerel veri önbelleği"
+      { tr: "Canlı döviz kurları ve altın fiyatları", en: "Live exchange rates and gold prices" },
+      { tr: "Detaylı grafik analizleri ve trend takibi", en: "Detailed chart analysis and trend tracking" },
+      { tr: "Anlık döviz çevirici", en: "Instant currency converter" },
+      { tr: "Favori para birimleri yönetimi", en: "Favorite currency management" },
+      { tr: "Kur değişim bildirimleri", en: "Exchange rate change notifications" },
+      { tr: "Koyu/Açık tema desteği", en: "Dark/Light theme support" },
+      { tr: "Widget entegrasyonu", en: "Widget integration" },
+      { tr: "Yerel veri önbelleği", en: "Local data caching" }
     ]
   }
 ]; 

@@ -4,6 +4,8 @@ import { Inter } from "next/font/google";
 import Link from 'next/link';
 import "./globals.css";
 import { useState } from 'react';
+import '../i18n';
+import { useTranslation } from 'react-i18next';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
+  };
 
   return (
-    <html lang="tr" className="scroll-smooth">
+    <html lang={i18n.language} className="scroll-smooth">
       <body className={inter.className}>
         {/* Animated Background */}
         <div className="animated-bg">
@@ -43,12 +50,15 @@ export default function RootLayout({
               </Link>
               
               {/* Desktop Menu */}
-              <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">Ana Sayfa</Link>
-                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">Hakkımda</Link>
-                <Link href="/skills" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">Deneyimler ve Yetenekler</Link>
-                <Link href="/projects" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">Projeler</Link>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">İletişim</Link>
+              <div className="hidden md:flex space-x-8 items-center">
+                <Link href="/" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.home')}</Link>
+                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.about')}</Link>
+                <Link href="/skills" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.skills')}</Link>
+                <Link href="/projects" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.projects')}</Link>
+                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.contact')}</Link>
+                <button onClick={toggleLanguage} className="ml-4 px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 transition-all">
+                  {i18n.language === 'tr' ? 'EN' : 'TR'}
+                </button>
               </div>
 
               {/* Mobile Menu Button */}
@@ -69,10 +79,14 @@ export default function RootLayout({
 
             {/* Mobile Menu */}
             <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden pb-4`}>
-              <Link href="/about" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">Hakkımda</Link>
-              <Link href="/skills" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">Yetenekler</Link>
-              <Link href="/projects" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">Projeler</Link>
-              <Link href="/contact" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">İletişim</Link>
+              <Link href="/" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.home')}</Link>
+              <Link href="/about" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.about')}</Link>
+              <Link href="/skills" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.skills')}</Link>
+              <Link href="/projects" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.projects')}</Link>
+              <Link href="/contact" className="block py-2 text-gray-300 hover:text-blue-400 transition-colors duration-300">{t('navbar.contact')}</Link>
+              <button onClick={toggleLanguage} className="mt-2 px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 transition-all w-full">
+                {i18n.language === 'tr' ? 'EN' : 'TR'}
+              </button>
             </div>
           </div>
         </nav>
