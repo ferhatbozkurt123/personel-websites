@@ -130,7 +130,7 @@ export default function Home() {
                     </span>
                   </a>
                   <a 
-                    href="https://linkedin.com/in/ferhatbozkurt"
+                    href="https://www.linkedin.com/in/ferhat-bozkurt1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-300 hover:text-blue-400 transition-colors duration-300 justify-center group"

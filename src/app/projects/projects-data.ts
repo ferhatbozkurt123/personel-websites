@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "/projects/stock-automation/8.png",
       "/projects/stock-automation/9.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/stock-automation",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Web",
       en: "Web"
@@ -104,7 +104,7 @@ export const projects: Project[] = [
       "/projects/energy-rl/2.png",
       "/projects/energy-rl/3.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/smart_home_energy_rl",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "AI",
       en: "AI"
@@ -152,7 +152,7 @@ export const projects: Project[] = [
       "/projects/trinity-game/4.png",
       "/projects/trinity-game/5.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/trinity-game",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Oyun",
       en: "Game"
@@ -214,7 +214,7 @@ export const projects: Project[] = [
       "/projects/smart-home/5.png",
       "/projects/smart-home/6.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/smart-home",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
@@ -247,7 +247,7 @@ export const projects: Project[] = [
     images: [
       "/projects/ftp-client/1.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/ftp-client",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Network Programming",
       en: "Network Programming"
@@ -282,7 +282,7 @@ export const projects: Project[] = [
       "/projects/property-management/1.png",
       "/projects/property-management/2.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/property-management",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Web",
       en: "Web"
@@ -319,7 +319,7 @@ export const projects: Project[] = [
       "/projects/ecommerce-demo/4.png",
       "/projects/ecommerce-demo/5.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/ecommerce-demo",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Web",
       en: "Web"
@@ -360,7 +360,7 @@ export const projects: Project[] = [
       "/projects/carbon-footprint/6.png",
       "/projects/carbon-footprint/7.png"
     ],
-    projectUrl: "https://github.com/kullaniciadi/karbon-ayak-izi",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
@@ -398,7 +398,7 @@ export const projects: Project[] = [
       "/projects/driving-exam/8.png",
       "/projects/driving-exam/9.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/driving-exam",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
@@ -434,7 +434,7 @@ export const projects: Project[] = [
       "/projects/pomem-app/3.png",
       "/projects/pomem-app/4.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/pomem-app",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
@@ -468,7 +468,7 @@ export const projects: Project[] = [
       "/projects/exam-tracker/3.png",
       "/projects/exam-tracker/4.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/exam-tracker",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
@@ -501,7 +501,7 @@ export const projects: Project[] = [
       "/projects/currency-tracker/3.png",
       "/projects/currency-tracker/4.png"
     ],
-    projectUrl: "https://github.com/ferhatbozkurt123/currency-tracker",
+    projectUrl: "https://github.com/ferhatbozkurt123",
     category: {
       tr: "Mobil",
       en: "Mobile"
