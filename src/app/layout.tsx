@@ -23,6 +23,9 @@ export default function RootLayout({
 
   return (
     <html lang={i18n.language} className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      </head>
       <body className={inter.className}>
         {/* Animated Background */}
         <div className="animated-bg">
