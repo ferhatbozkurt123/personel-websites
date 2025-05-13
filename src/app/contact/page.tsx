@@ -25,7 +25,7 @@ export default function Contact() {
       const templateID = 'template_7dzwjmz';
       const userID = 'MbpiaCyt1SvG6N6U_';
       
-      const result = await emailjs.send(
+      await emailjs.send(
         serviceID,
         templateID,
         {
@@ -37,7 +37,7 @@ export default function Contact() {
       );
       setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

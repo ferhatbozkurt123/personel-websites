@@ -6,7 +6,7 @@ import { Category, projects } from './projects-data';
 import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<Category>('Hepsi');
   const [selectedTech, setSelectedTech] = useState<string>('');
 
