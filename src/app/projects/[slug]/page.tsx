@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { projects } from '../projects-data';
 import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
 import { slugify } from '../../../utils/slugify';
 
-export default function ProjectDetail({ params }: { params: { slug: string } }) {
+export default async function ProjectDetail(props: any) {
+  const { params } = await props;
   const project = projects.find(p => {
     const projectSlug = slugify(p.title.tr);
     return projectSlug === params.slug;
