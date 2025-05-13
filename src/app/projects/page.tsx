@@ -6,7 +6,8 @@ import { Category, projects } from './projects-data';
 import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language as 'tr' | 'en';
   const [selectedCategory, setSelectedCategory] = useState<Category>('Hepsi');
   const [selectedTech, setSelectedTech] = useState<string>('');
 
@@ -24,11 +25,11 @@ export default function Projects() {
   // Projeleri filtrele
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
-      const matchesCategory = selectedCategory === 'Hepsi' || project.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'Hepsi' || project.category[lang] === selectedCategory;
       const matchesTech = !selectedTech || project.technologies.includes(selectedTech);
       return matchesCategory && matchesTech;
     });
-  }, [selectedCategory, selectedTech]);
+  }, [selectedCategory, selectedTech, lang]);
 
   // Filtreleri sıfırla
   const resetFilters = () => {
