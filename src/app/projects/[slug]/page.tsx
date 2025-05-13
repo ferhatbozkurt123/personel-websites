@@ -5,11 +5,7 @@ import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
 import { slugify } from '../../../utils/slugify';
 
-/**
- * @param {{ params: { slug: string } }} props
- */
-export default function ProjectDetail({ params }: any) {
-  // URL'deki slug'a göre projeyi bul
+export default function ProjectDetail({ params }: { params: { slug: string } }) {
   const project = projects.find(p => {
     const projectSlug = slugify(p.title.tr);
     return projectSlug === params.slug;
@@ -27,4 +23,10 @@ export default function ProjectDetail({ params }: any) {
   }
 
   return <ProjectDetailClient project={project} />;
+}
+
+export async function generateStaticParams() {
+  return projects.map((p) => ({
+    slug: slugify(p.title.tr),
+  }));
 } 
