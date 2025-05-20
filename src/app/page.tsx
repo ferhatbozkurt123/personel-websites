@@ -41,7 +41,10 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen p-2 md:p-4">
+    <main className="min-h-screen p-2 md:p-4 relative">
+      <div className="absolute inset-0 bg-gradient-radial from-blue-900/20 via-gray-900/50 to-gray-950 z-[-2]"></div>
+      <div className="absolute inset-0 bg-[url('/bg-grid.svg')] bg-repeat opacity-20 z-[-1]"></div>
+      
       <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row gap-8 relative">
         {/* Profile Card - Left Side */}
         <div className="lg:w-1/4 xl:w-1/5">
@@ -148,19 +151,6 @@ export default function Home() {
 
         {/* Main Content - Right Side - ENHANCED */}
         <div className="lg:w-3/4 xl:w-4/5 space-y-8">
-          {/* Welcome Banner */}
-          <div className="glass-card gradient-border rounded-2xl p-5 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 group-hover:from-blue-600/30 group-hover:to-purple-600/30 transition-all duration-500"></div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 relative">
-              <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
-                {t('home.welcome')}
-              </span>
-            </h2>
-            <p className="text-gray-300 text-lg md:text-xl max-w-3xl relative">
-              {t('home.welcomeDesc')}
-            </p>
-          </div>
-
           {/* Skills Showcase */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link href="/skills" className="block">

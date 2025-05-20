@@ -5,7 +5,8 @@ import ProjectDetailClient from './ProjectDetailClient';
 import Link from 'next/link';
 import { slugify } from '../../../utils/slugify';
 
-export default async function ProjectDetail(props: { params: { slug: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function ProjectDetail(props: any) {
   const { params } = await props;
   const project = projects.find(p => {
     const projectSlug = slugify(p.title.tr);
